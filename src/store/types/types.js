@@ -9,4 +9,14 @@ export const types = {
     walletLogin: '[WALLET] Login',
     walletInvestedCoins: '[WALLET] Invested coins',
     walletLogout: '[WALLET] Logout',
+    walletAddCoin: '[WALLET] Add coin',
+    walletLoadCoins: '[WALLET] Load coins',
+    walletStartInvesting: '[WALLET] Start investing',
+    walletInvest: '[WALLET] Invest',
+    walletStartLoadingCoins: '[WALLET] Start loading coins',
+
+    INVEST: '[INVEST] Invest',
+
+    coinAdd: '[COIN] Add coin',
+    coinRemove: '[COIN] Remove coin',
 }

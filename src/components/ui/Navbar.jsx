@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
-import { startLogout } from "../../actions/auth";
+import { startLogout } from "../../store/actions/auth";
 
 
 export const Navbar = () => {
@@ -31,7 +31,7 @@ export const Navbar = () => {
                         className='nav-link navitem'
                         to='/wallet'
                     >
-                        Wallet
+                        Ir a Wallet
                     </NavLink>}
 
                     <NavLink 
@@ -45,7 +45,7 @@ export const Navbar = () => {
                         className='nav-link navitem'
                         to='/walletLogin'
                     >
-                        Wallet Login
+                        Registrar Wallet
                     </NavLink>}
             </div>
             

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from '../../hooks/useForm';
 import { useDispatch } from 'react-redux';
-import { startLogin, startRegister } from '../../actions/auth';
+import { startLogin, startRegister } from '../../store/actions/auth';
 import validator from 'validator';
 import Swal from 'sweetalert2';
 import './login.css';

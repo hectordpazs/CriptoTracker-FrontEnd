@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getWallet } from '../../actions/wallet'
+import { loadInvestedCoins } from '../../store/actions/coins'
+import { getWallet } from '../../store/actions/wallet'
+import { MustLogFirst } from '../ui/MustLogFirst'
 import { WalletFormInvest } from './WalletFormInvest'
 import { WalletInvestedCoins } from './WalletInvestedCoins'
 
@@ -12,13 +14,15 @@ export const WalletScreen = () => {
 
   useEffect(() => {
     dispatch(getWallet());
+    dispatch(loadInvestedCoins())
   }, [dispatch]);
 
   const wallet = useSelector(state => state.wallet);
-
+  
   if (!wallet.logged) {
-    //hacer un componente bonito para que no se vea tan feo
-    return <div><h1>DEBES LOGGEAR EN LA WALLET PRIMERO</h1></div>
+    return (
+      <MustLogFirst/>
+    )
   }
 
     return (

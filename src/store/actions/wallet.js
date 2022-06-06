@@ -1,7 +1,6 @@
-import {fetchConToken} from '../helpers/fetch';
 import Swal from 'sweetalert2';
-import {types} from '../types/types';
-
+import { fetchConToken } from "../../helpers/fetch";
+import { types } from '../types/types';
 
 export const startWalletLogin = (password) => {
     return async (dispatch) => {
@@ -14,7 +13,6 @@ export const startWalletLogin = (password) => {
                 user: body.wallet.user,
             }));
             
-            localStorage.setItem('wallet', JSON.stringify(body.wallet));
         } else {
             Swal.fire('Error', body.msg, 'error');
         }

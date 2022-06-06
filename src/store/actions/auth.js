@@ -1,8 +1,7 @@
-import { fetchConToken, fetchSinToken } from "../helpers/fetch";
 import Swal from "sweetalert2";
-import { types } from "../types/types";
+import { fetchConToken, fetchSinToken } from "../../helpers/fetch";
+import { types } from '../types/types';
 import { walletLogout } from "./wallet";
-
 
 export const startLogin = (email, password)=>{
     return async(dispatch)=>{

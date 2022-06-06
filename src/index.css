@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+
+body {
+  background-color: #263238;
+}
+
+ul {
+  list-style: none;
+}
+
+.coinlist-image {
+  width: 100px;
+}
+
+.coinlist-item {
+  display: flex;
+}
+
+.coinsummary {
+  border-color: white !important;
+  border-style: outset !important;
+}
+
+.coin-data-category {
+  font-size: 10px;
+}
+
+.delete-icon {
+  display: none;
+  position: absolute;
+  right: 6px;
+}
+
+.coin:hover .delete-icon {
+  display: block;
+}
+
+.coin{
+  text-align: center;
+}
+
+.coin-name{
+  font-size: 20px;
+  position: relative;
+  right: 15%;
+}
+
+.coin-name::first-letter{
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .coin-name {
+    font-size: 15px;
+    right: 0;
+  }
+}

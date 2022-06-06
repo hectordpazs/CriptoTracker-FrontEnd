@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from '../../hooks/useForm'
 import Swal from 'sweetalert2';
 import { useDispatch, useSelector } from 'react-redux';
-import { startWalletLogin, startWalletRegister } from '../../actions/wallet';
+import { startWalletLogin, startWalletRegister } from '../../store/actions/wallet';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -23,21 +23,19 @@ export const WalletLoginScreen = () => {
 
     const {registerPassword, registerPassword2} = registerValues;
 
-    const logged = useSelector(state => state.wallet.logged);
-
     const dispatch = useDispatch();
 
     const handleLogin = (e) => {
         e.preventDefault();
         dispatch(startWalletLogin(walletPassword));
-        logged && navigate('/wallet');
+        navigate('/wallet');
     }
 
     const handleRegister = (e) => {
         e.preventDefault();
         if(isFormValid()){
             dispatch(startWalletRegister(registerPassword));
-            logged && navigate('/wallet');
+            navigate('/wallet');
         }
     }
 
@@ -56,8 +54,8 @@ export const WalletLoginScreen = () => {
         <div className="container login-container">
             <div className="row">
                 
-                <div className="col-sm-12 login-form-2 mt-0">
-                    <h3>Register Wallet</h3>
+                <div className="col-lg-6 login-form-2 mt-0">
+                    <h3>Registrar Wallet</h3>
                     <form onSubmit={handleRegister}>
                         <div className="form-group">
                             <input 
@@ -75,11 +73,32 @@ export const WalletLoginScreen = () => {
                                 onChange={handleRegisterChange}
                             />
                         </div>
+
                         <div className="form-group">
                             <input type="submit" className="btnSubmit" value="Register" />
                         </div>
                     </form>
                 </div>
+
+                <div className="col-lg-6 login-form-1 mt-0">
+                    <h3>Iniciar Sesion</h3>
+                    <form onSubmit={handleLogin}>
+                        <div className="form-group">
+                            <input
+                                type="password"
+                                className="form-control"
+                                placeholder="Your Password *"
+                                name='walletPassword'
+                                onChange={handleInputChange}
+                            />
+                             <div className="form-group">
+                                <input type="submit" className="btnSubmit" value="Login" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                            
             </div>
         </div>
     )
